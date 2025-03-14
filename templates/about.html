@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}About {% endblock title%}
+{% block body %}
+
+    <body class="bg-gray-50 text-gray-900">
+
+        <!-- Hero Section -->
+        <section class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?icecream,cold');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative text-center text-white">
+                <h1 class="text-5xl font-bold">Welcome to Ice CreamStore</h1>
+                <p class="mt-2 text-lg">Bringing happiness, one scoop at a time!</p>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+        <section class="py-16 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <img src="{% static 'images/about.jpg' %}" alt="Ice Cream Image" class="rounded-lg shadow-md">
+                <div>
+                    <h2 class="text-3xl font-bold">Our Story</h2>
+                    <p class="mt-4 text-gray-600">
+                        Established in 2025, Ice Cream Delight was born out of a passion for creating **artisanal, handcrafted ice creams** with the finest ingredients.  
+                        We believe that **every scoop tells a story**—one of nostalgia, joy, and indulgence. Our flavors are inspired by global traditions and local ingredients to bring you the most delightful experience.
+                    </p>
+                    <p class="mt-2 text-gray-600">
+                        From **classic Vanilla Bean** to **exotic Mango Tango**, we craft each flavor with love and dedication.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Why Choose Us -->
+        <section class="bg-indigo-100 py-16">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-center text-3xl font-bold">Why Choose Us?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 mx-auto bg-indigo-500 text-white rounded-full">
+                            🍦
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">Premium Ingredients</h3>
+                        <p class="mt-2 text-gray-600">We use only the best **organic milk, fresh fruits, and natural flavors**.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 mx-auto bg-indigo-500 text-white rounded-full">
+                            🌱
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">100% Natural</h3>
+                        <p class="mt-2 text-gray-600">No artificial colors or preservatives, just **pure goodness**.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-16 h-16 mx-auto bg-indigo-500 text-white rounded-full">
+                            ⭐
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold">Customer Favorite</h3>
+                        <p class="mt-2 text-gray-600">Loved by thousands with **4.9+ star ratings** on all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Customer Reviews -->
+        <section class="py-16 px-6 max-w-6xl mx-auto">
+            <h2 class="text-center text-3xl font-bold">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"The best ice cream I've ever had! The flavors are so fresh and unique!"</p>
+                    <p class="mt-2 font-semibold">- Emily R.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"I love their vegan options! Finally, a place where everyone can enjoy!"</p>
+                    <p class="mt-2 font-semibold">- James L.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"Incredible flavors and super friendly staff. I keep coming back for more!"</p>
+                    <p class="mt-2 font-semibold">- Sarah M.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="bg-indigo-500 text-white py-6 text-center">
+            <p>&copy; 2025 Ice Cream Delight | Made with ❤️ for ice cream lovers</p>
+        </footer>
+    
+    </body>
+    
+{% endblock body %}

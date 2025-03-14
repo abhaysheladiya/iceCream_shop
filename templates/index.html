@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}Home {% endblock title%}
+{% block body %}
+<div class="bg-gray-50">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Popular Ice Cream Flavors</h2>
+  
+      <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <!-- Chocolate Ice Cream -->
+        <div class="group relative">
+          <img src="{% static 'images/chocolate.jpg' %}" alt="Chocolate Ice Cream" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Chocolate Delight
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Rich & Creamy</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$5.99</p>
+          </div>
+        </div>
+  
+        <!-- Strawberry Ice Cream -->
+        <div class="group relative">
+          <img src="{% static 'images/strawbarry.jpg' %}" alt="Strawberry Ice Cream" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Strawberry Bliss
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Sweet & Fruity</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$5.49</p>
+          </div>
+        </div>
+  
+        <!-- Vanilla Ice Cream -->
+        <div class="group relative">
+          <img src="{% static 'images/vanila.jpg' %}" alt="Vanilla Ice Cream" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Classic Vanilla
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Smooth & Creamy</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$4.99</p>
+          </div>
+        </div>
+  
+        <!-- Mint Chocolate Ice Cream -->
+        <div class="group relative">
+          <img src="{% static 'images/mint.jpg' %}" alt="Mint Chocolate Ice Cream" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  Mint Chocolate
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">Refreshing & Chocolaty</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">$6.29</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      
+{% endblock body %}
