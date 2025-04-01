@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact
+from home.models import Signup
 from django.contrib import messages
 
 # Create your views here.
@@ -28,3 +29,18 @@ def contact(request):
 
     return render(request, 'contact.html')
    # return HttpResponse("this is contact page")
+   
+def login(request):
+    return render(request, 'login.html')
+
+
+def signup(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        signup = Signup(username=username, email=email, password= password, date= datetime.today())
+        signup.save()
+        messages.success(request, "You successfully signup.")
+
+    return render(request, 'login.html')
