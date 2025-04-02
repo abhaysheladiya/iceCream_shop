@@ -3,6 +3,10 @@ from datetime import datetime
 from home.models import Contact
 from home.models import Signup
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
+
 
 # Create your views here.
 def index(request):
@@ -30,8 +34,23 @@ def contact(request):
     return render(request, 'contact.html')
    # return HttpResponse("this is contact page")
    
-def login(request):
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Login successful!")
+            return redirect('home')  # Redirect to homepage after login
+        else:
+            messages.error(request, "Invalid username or password. Please try again.")
+
     return render(request, 'login.html')
+
+
 
 
 def signup(request):
@@ -39,8 +58,20 @@ def signup(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        signup = Signup(username=username, email=email, password= password, date= datetime.today())
-        signup.save()
-        messages.success(request, "You successfully signup.")
 
-    return render(request, 'login.html')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already taken. Choose another one.")
+            return redirect('signup')
+
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+
+        messages.success(request, "Signup successful! You can now log in.")
+        return redirect('login')  # Redirect to login page after signup
+
+    return render(request, 'signup.html')
+
+
+
+
+    #return render(request, 'login.html')
